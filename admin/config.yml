@@ -1,0 +1,286 @@
+backend:
+  name: git-gateway
+  branch: master
+media_folder: images
+public_folder: /images
+collections:
+  - name: config
+    label: Global Site Config
+    files:
+      - name: config
+        label: Global Site Config
+        file: _config.yml
+        fields:
+          - widget: string
+            name: title
+            label: Site Title
+            required: false
+            hint: 'The title displayed in the site header, title tag.'
+          - widget: image
+            name: logo
+            label: Logo
+            required: false
+            hint: The logo for the site.
+          - widget: string
+            name: description
+            label: Description
+            required: false
+            hint: The default description displayed in meta tags.
+          - widget: string
+            name: baseurl
+            label: Baseurl
+            required: false
+            hint: 'The subpath of your site, e.g. /blog, for generating urls.'
+          - widget: string
+            name: url
+            label: Url
+            required: false
+            hint: >-
+              The base hostname & protocol for your site, e.g.
+              http://example.com
+          - widget: object
+            name: author
+            label: Author Settings
+            required: false
+            fields:
+              - widget: string
+                name: name
+                label: Author name
+                required: false
+                hint: The name of the author.
+              - widget: string
+                name: bio
+                label: Bio
+                required: false
+                hint: The short bio of the author.
+          - widget: string
+            name: twitter
+            label: Twitter
+            required: false
+            hint: Your Twitter url.
+          - widget: string
+            name: facebook
+            label: Facebook
+            required: false
+            hint: Your Facebook url.
+          - widget: string
+            name: dribbble
+            label: Dribbble
+            required: false
+            hint: Your Dribbble url.
+          - widget: string
+            name: instagram
+            label: Instagram
+            required: false
+            hint: Your Instagram url.
+          - widget: string
+            name: pinterest
+            label: Pinterest
+            required: false
+            hint: Your Pinterest url.
+          - widget: string
+            name: email
+            label: Email address
+            required: false
+            hint: Your email address.
+          - widget: boolean
+            name: hero
+            label: Enable hero section?
+            required: false
+            default: true
+          - widget: string
+            name: hero-title
+            label: Hero title
+            required: false
+            hint: The title of the hero section.
+          - widget: string
+            name: hero-subtitle
+            label: Hero subtitle
+            required: false
+            hint: The subtitle of the hero section.
+          - widget: image
+            name: hero-image
+            label: Hero image
+            required: false
+            hint: The background image of the hero section.
+          - widget: image
+            name: footer-image
+            label: Footer image
+            required: false
+            hint: The background image of the footer section.
+          - widget: string
+            name: disqus-identifier
+            label: Disqus shortname
+            required: false
+            hint: 'Your shortname for Disqus Comments. For example, mr-brown.'
+          - widget: string
+            name: google-analytics
+            label: Google Analytics
+            required: false
+            hint: 'Your Google Analytics identifier. For example, UA-99631805-1.'
+          - widget: string
+            name: mailchimp
+            label: Newsletter
+            required: false
+            hint: >-
+              Your MailChimp form identifier. For example,
+              blogenjoyfreedom.us16.list-manage.com/subscribe/post?u=cd56155d76ddeeb4c0bc4d080&amp;id=7a526cd13e.
+          - widget: hidden
+            name: markdown
+            label: The Markdown renderer.
+            required: false
+          - widget: string
+            name: permalink
+            label: Permalink
+            required: false
+            hint: The global permalink.
+          - widget: list
+            name: plugins
+            label: Plugins
+            required: false
+            hint: The list of plugins.
+            field:
+              label: String
+              name: string
+              widget: string
+          - widget: number
+            name: paginate
+            label: Paginate
+            required: false
+            hint: The number of posts per page.
+            valueType: int
+          - widget: string
+            name: paginate_path
+            label: Pagination Path
+            required: false
+            hint: The destination of the pagination pages.
+          - widget: list
+            name: defaults
+            label: Front Matter Defaults
+            required: false
+            hint: The default front matter options.
+            fields:
+              - widget: object
+                name: scope
+                label: Scope
+                required: false
+                fields:
+                  - widget: string
+                    name: path
+                    label: Path
+                    required: true
+              - widget: object
+                name: values
+                label: Values
+                required: false
+                fields:
+                  - widget: string
+                    name: permalink
+                    label: Permalink
+                    required: true
+          - widget: string
+            name: tag_page_dir
+            label: Tag Page Directory
+            required: false
+            hint: The destination of the tag page.
+          - widget: string
+            name: tag_page_layout
+            label: Tag Page Layout
+            required: false
+            hint: The tag page layout.
+          - widget: string
+            name: tag_permalink_style
+            label: Tag Permalink Style
+            required: false
+            hint: The tag permalink style.
+          - widget: list
+            name: include
+            label: Include
+            required: false
+            hint: Directories and/or files to include in the conversion.
+            field:
+              label: String
+              name: string
+              widget: string
+          - widget: hidden
+            name: sass
+            label: Sass Configuration
+            required: false
+  - name: post
+    label: Posts
+    folder: _posts
+    create: true
+    extension: md
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - widget: string
+        name: title
+        label: Title
+        required: true
+        hint: The title of the post.
+      - widget: date
+        name: date
+        label: Date
+        required: true
+        hint: The publish date of the post.
+      - widget: image
+        name: image
+        label: Featured Image
+        required: false
+        hint: The featured image of the post.
+      - widget: list
+        name: tags
+        label: Tags
+        required: false
+        field:
+          label: String
+          name: string
+          widget: string
+      - widget: hidden
+        name: layout
+        label: Layout
+        required: true
+        default: post
+      - widget: markdown
+        name: body
+        label: Content
+        required: false
+        hint: Page content
+    filter:
+      field: layout
+      value: post
+  - name: page
+    label: Pages
+    folder: _pages
+    create: true
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - widget: string
+        name: title
+        label: Title
+        required: true
+        hint: The title of the page.
+      - widget: string
+        name: permalink
+        label: Permalink
+        required: false
+        hint: The permalink of the page.
+      - widget: image
+        name: image
+        label: Featured Image
+        required: false
+        hint: The featured image of the page.
+      - widget: hidden
+        name: layout
+        label: Layout
+        required: true
+        default: page
+      - widget: markdown
+        name: body
+        label: Content
+        required: false
+        hint: Page content
+    filter:
+      field: layout
+      value: page
