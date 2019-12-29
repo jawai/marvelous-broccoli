@@ -1,5 +1,5 @@
 title: Reked
-logo: images/logo.svg
+logo: /images/me.png
 description: Privacy. Law. Technology.
 baseurl: ''
 url: ''
@@ -14,7 +14,7 @@ pinterest: 'https://pinterest.com/'
 email: forexample@website.com
 hero: true
 hero-title: Privacy. Law. Technology.
-hero-subtitle: For those who love simplicity
+hero-subtitle: Jason Wai
 hero-image: images/14.jpg
 footer-image: images/14.jpg
 disqus-identifier: mr-brown
