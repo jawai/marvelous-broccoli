@@ -1,6 +1,6 @@
-title: Reked
+title: Jason Wai
 logo: /images/me.png
-description: Privacy. Law. Technology.
+description: 'privacy technology law '
 baseurl: ''
 url: ''
 author:
@@ -13,10 +13,10 @@ instagram: 'https://instagram.com/'
 pinterest: 'https://pinterest.com/'
 email: forexample@website.com
 hero: true
-hero-title: Privacy. Law. Technology.
-hero-subtitle: Jason Wai
-hero-image: images/14.jpg
-footer-image: images/14.jpg
+hero-title: Jason Wai
+hero-subtitle: Privacy. Law. Technology.
+hero-image: /images/me.jpg
+footer-image: ''
 disqus-identifier: mr-brown
 google-analytics: ''
 mailchimp: ''
