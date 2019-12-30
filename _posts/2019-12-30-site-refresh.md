@@ -14,10 +14,6 @@ A lot of times, when I visit a person's website or blog, I like to think about w
 
 Focus on the JAM!!! Lovely, lovely, lovely JAM! YUM!
 
-
-
-
-
 <https://jamstack.org/>
 
 <!--StartFragment-->
