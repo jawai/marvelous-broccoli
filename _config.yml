@@ -1,5 +1,5 @@
 title: Jason Wai
-logo: /images/me.jpg
+logo: /images/me-50x50.jpg
 description: 'privacy technology law '
 baseurl: ''
 url: ''
@@ -15,8 +15,8 @@ email: forexample@website.com
 hero: true
 hero-title: Jason Wai
 hero-subtitle: Privacy. Law. Technology.
-hero-image: /images/milky-way-1023340_1920.jpg
-footer-image: /images/milky-way-984050_1920.jpg
+hero-image: /images/main-750x500.jpg
+footer-image: /images/footer-750x450.jpg
 disqus-identifier: ''
 google-analytics: ''
 mailchimp: ''
